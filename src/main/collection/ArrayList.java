@@ -35,10 +35,6 @@ public class ArrayList {
         return size;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
     public boolean isFull() {
         return size >= items.length;
     }
