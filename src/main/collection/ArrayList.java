@@ -9,6 +9,7 @@ public class ArrayList {
         this.size = 0;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("ArrayList {\n");
