@@ -26,13 +26,27 @@ public class ArrayList {
         return -1;
     }
 
-    public Integer getItem(int positon) throws IndexOutOfBoundsException {
-        if (positon < 0 || positon >= size) throw new IndexOutOfBoundsException();
-        return items[positon];
+    public Integer getItem(int position) throws IndexOutOfBoundsException {
+        if (position < 0 || position >= size) throw new IndexOutOfBoundsException();
+        return items[position];
+    }
+
+    public void removeItem(int position) throws IndexOutOfBoundsException {
+        if (position < 0 || position >= size) throw new IndexOutOfBoundsException();
+
+        for (int i = position; i < size - 1; i++) {
+            items[i] = items[i + 1];
+        }
+        items[size - 1] = null;
+        size--;
     }
 
     public int size() {
         return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
     }
 
     public boolean isFull() {

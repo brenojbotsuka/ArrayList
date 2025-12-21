@@ -43,5 +43,19 @@ public class Main {
         System.out.println(list.indexOf(7));
         System.out.println(list.indexOf(101));
         System.out.println("---");
+
+        System.out.println("Removendo itens no ArrayList\n");
+        System.out.println(list);
+        int indexOfSeven = list.indexOf(7);
+        list.removeItem(indexOfSeven);
+        System.out.println(list);
+        list.removeItem(2);
+        System.out.println(list);
+
+        while (!list.isEmpty()) {
+            list.removeItem(0);
+            System.out.println(list);
+        }
+        System.out.println("---");
     }
 }
