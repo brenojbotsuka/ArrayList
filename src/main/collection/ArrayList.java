@@ -1,7 +1,7 @@
 package main.collection;
 
 public class ArrayList {
-    private Integer[] items;
+    private final Integer[] items;
     private int size;
 
     public ArrayList(int capacity) {
