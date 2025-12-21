@@ -1,12 +1,24 @@
 package main.collection;
 
 public class ArrayList {
-    private Integer[] items;
+    private final Integer[] items;
     private int size;
 
     public ArrayList(int capacity) {
         items = new Integer[capacity];
         this.size = 0;
+    }
+
+    public void addItem(Integer item) {
+        if (isFull()) {
+            return;
+        }
+        items[size] = item;
+        size++;
+    }
+
+    public boolean isFull() {
+        return size >= items.length;
     }
 
     @Override
