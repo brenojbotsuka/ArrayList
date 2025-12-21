@@ -17,6 +17,28 @@ public class ArrayList {
         size++;
     }
 
+    public int indexOf(Integer item) {
+        for (int position = 0; position < size; position++) {
+            if (items[position].equals(item)) {
+                return position;
+            }
+        }
+        return -1;
+    }
+
+    public Integer getItem(int positon) throws IndexOutOfBoundsException {
+        if (positon < 0 || positon >= size) throw new IndexOutOfBoundsException();
+        return items[positon];
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     public boolean isFull() {
         return size >= items.length;
     }
