@@ -57,5 +57,15 @@ public class Main {
             System.out.println(list);
         }
         System.out.println("---");
+
+
+        System.out.println("Adicionando itens no ArrayList em posições aleatorias\n");
+        while (!list.isFull()) {
+            int item = random.nextInt(0, 100);
+            int position = random.nextInt(0, list.size() + 1);
+            list.addItem(item, position);
+            System.out.println(list);
+        }
+        System.out.println("---");
     }
 }

@@ -17,6 +17,16 @@ public class ArrayList {
         size++;
     }
 
+    public void addItem(Integer item, int position) throws IndexOutOfBoundsException {
+        if (position < 0 || position > size) throw new IndexOutOfBoundsException();
+
+        for (int cursor = size; cursor > position; cursor--) {
+            items[cursor] = items[cursor - 1];
+        }
+        items[position] = item;
+        size++;
+    }
+
     public int indexOf(Integer item) {
         for (int position = 0; position < size; position++) {
             if (items[position].equals(item)) {
@@ -34,8 +44,8 @@ public class ArrayList {
     public void removeItem(int position) throws IndexOutOfBoundsException {
         if (position < 0 || position >= size) throw new IndexOutOfBoundsException();
 
-        for (int i = position; i < size - 1; i++) {
-            items[i] = items[i + 1];
+        for (int cursor = position; cursor < size - 1; cursor++) {
+            items[cursor] = items[cursor + 1];
         }
         items[size - 1] = null;
         size--;
