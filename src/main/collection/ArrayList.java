@@ -9,6 +9,18 @@ public class ArrayList {
         this.size = 0;
     }
 
+    public void addItem(Integer item) {
+        if (isFull()) {
+            return;
+        }
+        items[size] = item;
+        size++;
+    }
+
+    public boolean isFull() {
+        return size >= items.length;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("ArrayList {\n");
