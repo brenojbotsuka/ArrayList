@@ -4,9 +4,8 @@ public class SortUtil {
     public static void bubbleSort(Integer[] array, int size, Order order) {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++) {
-                int cmp = array[j].compareTo(array[j + 1]);
-                if ((order == Order.ASC && cmp > 0) || (order == Order.DESC && cmp < 0)) {
-                    swapItems(array, j, j + 1);
+                if (compareValues(array[j].compareTo(array[j + 1]), order)) {
+                    swapValues(array, j, j + 1);
                 }
             }
         }
@@ -17,8 +16,7 @@ public class SortUtil {
             Integer key = array[i];
             int j = i - 1;
             while (j >= 0) {
-                int cmp = array[j].compareTo(key);
-                if ((order == Order.ASC && cmp > 0) || (order == Order.DESC && cmp < 0)) {
+                if (compareValues(array[j].compareTo(key), order)) {
                     array[j + 1] = array[j];
                     j--;
                 } else {
@@ -33,18 +31,21 @@ public class SortUtil {
         for (int i = 0; i < size - 1; i++) {
             int selectedIdx = i;
             for (int j = i + 1; j < size; j++) {
-                int cmp = array[selectedIdx].compareTo(array[j]);
-                if ((order == Order.ASC && cmp > 0) || (order == Order.DESC && cmp < 0)) {
+                if (compareValues(array[selectedIdx].compareTo(array[j]), order)) {
                     selectedIdx = j;
                 }
             }
             if (selectedIdx != i) {
-                swapItems(array, selectedIdx, i);
+                swapValues(array, selectedIdx, i);
             }
         }
     }
 
-    private static void swapItems(Integer[] array, int left, int right) {
+    private static boolean compareValues(int compareResult, Order order) {
+        return (order == Order.ASC && compareResult > 0) || (order == Order.DESC && compareResult < 0);
+    }
+
+    private static void swapValues(Integer[] array, int left, int right) {
         Integer temp = array[left];
         array[left] = array[right];
         array[right] = temp;
