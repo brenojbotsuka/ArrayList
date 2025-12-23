@@ -70,10 +70,9 @@ public class Main {
         System.out.println("---");
 
         ArrayList integerList = new ArrayList(16);
-        while (!integerList.isFull()) {
+        for (int i = 0; i < 10; i++) {
             int item = random.nextInt(-100, 100);
-            int position = random.nextInt(0, integerList.size() + 1);
-            integerList.addItem(item, position);
+            integerList.addItem(item);
         }
         System.out.println(integerList);
         integerList.sort(SortUtil::bubbleSort, Order.ASC);

@@ -57,9 +57,7 @@ public class ArrayList {
     }
 
     public void sort(SortAlgorithm algorithm, Order order) {
-        Integer[] arr = Arrays.copyOf(items, size());
-        algorithm.execute(arr, order);
-        if (size >= 0) System.arraycopy(arr, 0, items, 0, size);
+        algorithm.execute(items, size, order);
     }
 
     public int size() {

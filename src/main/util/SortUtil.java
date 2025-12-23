@@ -1,10 +1,9 @@
 package main.util;
 
 public class SortUtil {
-    public static void bubbleSort(Integer[] array, Order order) {
-        int n = array.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
+    public static void bubbleSort(Integer[] array, int size, Order order) {
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
                 int cmp = array[j].compareTo(array[j + 1]);
                 if ((order == Order.ASC && cmp > 0) || (order == Order.DESC && cmp < 0)) {
                     Integer temp = array[j];
@@ -15,9 +14,8 @@ public class SortUtil {
         }
     }
 
-    public static void insertionSort(Integer[] array, Order order) {
-        int n = array.length;
-        for (int i = 1; i < n; i++) {
+    public static void insertionSort(Integer[] array, int size, Order order) {
+        for (int i = 1; i < size; i++) {
             Integer key = array[i];
             int j = i - 1;
             while (j >= 0) {
@@ -33,11 +31,10 @@ public class SortUtil {
         }
     }
 
-    public static void selectionSort(Integer[] array, Order order) {
-        int n = array.length;
-        for (int i = 0; i < n - 1; i++) {
+    public static void selectionSort(Integer[] array, int size, Order order) {
+        for (int i = 0; i < size - 1; i++) {
             int selectedIdx = i;
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i + 1; j < size; j++) {
                 int cmp = array[selectedIdx].compareTo(array[j]);
                 if ((order == Order.ASC && cmp > 0) || (order == Order.DESC && cmp < 0)) {
                     selectedIdx = j;
