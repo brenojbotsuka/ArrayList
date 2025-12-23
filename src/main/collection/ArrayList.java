@@ -1,5 +1,11 @@
 package main.collection;
 
+import main.util.Order;
+import main.util.SortAlgorithm;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+
 public class ArrayList {
     private final Integer[] items;
     private int size;
@@ -49,6 +55,12 @@ public class ArrayList {
         }
         items[size - 1] = null;
         size--;
+    }
+
+    public void sort(SortAlgorithm algorithm, Order order) {
+        Integer[] arr = Arrays.copyOf(items, size());
+        algorithm.execute(arr, order);
+        if (size >= 0) System.arraycopy(arr, 0, items, 0, size);
     }
 
     public int size() {

@@ -1,6 +1,8 @@
 package main;
 
 import main.collection.ArrayList;
+import main.util.Order;
+import main.util.SortUtil;
 
 import java.util.Random;
 
@@ -58,7 +60,6 @@ public class Main {
         }
         System.out.println("---");
 
-
         System.out.println("Adicionando itens no ArrayList em posições aleatorias\n");
         while (!list.isFull()) {
             int item = random.nextInt(0, 100);
@@ -67,5 +68,30 @@ public class Main {
             System.out.println(list);
         }
         System.out.println("---");
+
+        ArrayList integerList = new ArrayList(16);
+        while (!integerList.isFull()) {
+            int item = random.nextInt(-100, 100);
+            int position = random.nextInt(0, integerList.size() + 1);
+            integerList.addItem(item, position);
+        }
+        System.out.println(integerList);
+        integerList.sort(SortUtil::bubbleSort, Order.ASC);
+        System.out.println(integerList);
+
+        integerList.sort(SortUtil::insertionSort, Order.ASC);
+        System.out.println(integerList);
+
+        integerList.sort(SortUtil::selectionSort, Order.ASC);
+        System.out.println(integerList);
+
+        integerList.sort(SortUtil::bubbleSort, Order.DESC);
+        System.out.println(integerList);
+
+        integerList.sort(SortUtil::insertionSort, Order.DESC);
+        System.out.println(integerList);
+
+        integerList.sort(SortUtil::selectionSort, Order.DESC);
+        System.out.println(integerList);
     }
 }
