@@ -6,9 +6,7 @@ public class SortUtil {
             for (int j = 0; j < size - i - 1; j++) {
                 int cmp = array[j].compareTo(array[j + 1]);
                 if ((order == Order.ASC && cmp > 0) || (order == Order.DESC && cmp < 0)) {
-                    Integer temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    swapItems(array, j, j + 1);
                 }
             }
         }
