@@ -4,16 +4,17 @@ import main.util.Order;
 import main.util.SortAlgorithm;
 
 
-public class ArrayList {
-    private final Integer[] items;
+public class ArrayList<T> {
+    private final T[] items;
     private int size;
 
+    @SuppressWarnings("unchecked")
     public ArrayList(int capacity) {
-        items = new Integer[capacity];
+        items = (T[]) new Object[capacity];
         this.size = 0;
     }
 
-    public void addItem(Integer item) {
+    public void addItem(T item) {
         if (isFull()) {
             return;
         }
@@ -21,7 +22,7 @@ public class ArrayList {
         size++;
     }
 
-    public void addItem(Integer item, int position) throws IndexOutOfBoundsException {
+    public void addItem(T item, int position) throws IndexOutOfBoundsException {
         if (position < 0 || position > size) throw new IndexOutOfBoundsException();
 
         for (int cursor = size; cursor > position; cursor--) {
@@ -31,7 +32,7 @@ public class ArrayList {
         size++;
     }
 
-    public int indexOf(Integer item) {
+    public int indexOf(T item) {
         for (int position = 0; position < size; position++) {
             if (items[position].equals(item)) {
                 return position;
@@ -40,7 +41,7 @@ public class ArrayList {
         return -1;
     }
 
-    public Integer getItem(int position) throws IndexOutOfBoundsException {
+    public T getItem(int position) throws IndexOutOfBoundsException {
         if (position < 0 || position >= size) throw new IndexOutOfBoundsException();
         return items[position];
     }
@@ -55,7 +56,7 @@ public class ArrayList {
         size--;
     }
 
-    public void sort(SortAlgorithm algorithm, Order order) {
+    public void sort(SortAlgorithm<T> algorithm, Order order) {
         algorithm.execute(items, size, order);
     }
 

@@ -9,7 +9,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Iniciando ArrayList\n");
-        ArrayList list = new ArrayList(5);
+        ArrayList<Integer> list = new ArrayList<>(5);
         System.out.println(list);
         System.out.println("---");
 
@@ -69,7 +69,7 @@ public class Main {
         }
         System.out.println("---");
 
-        ArrayList integerList = new ArrayList(16);
+        ArrayList<Integer> integerList = new ArrayList<>(16);
         for (int i = 0; i < 10; i++) {
             int item = random.nextInt(-100, 100);
             integerList.addItem(item);
@@ -92,5 +92,32 @@ public class Main {
 
         integerList.sort(SortUtil::selectionSort, Order.DESC);
         System.out.println(integerList);
+
+        System.out.println("---");
+
+        ArrayList<String> stringList = new ArrayList<>(16);
+        stringList.addItem("Breno");
+        stringList.addItem("Jose");
+        stringList.addItem("Bueno");
+        stringList.addItem("Otsuka");
+
+        System.out.println(stringList);
+        stringList.sort(SortUtil::bubbleSort, Order.ASC);
+        System.out.println(stringList);
+
+        stringList.sort(SortUtil::insertionSort, Order.ASC);
+        System.out.println(stringList);
+
+        stringList.sort(SortUtil::selectionSort, Order.ASC);
+        System.out.println(stringList);
+
+        stringList.sort(SortUtil::bubbleSort, Order.DESC);
+        System.out.println(stringList);
+
+        stringList.sort(SortUtil::insertionSort, Order.DESC);
+        System.out.println(stringList);
+
+        stringList.sort(SortUtil::selectionSort, Order.DESC);
+        System.out.println(stringList);
     }
 }

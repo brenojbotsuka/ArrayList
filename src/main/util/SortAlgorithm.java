@@ -1,6 +1,6 @@
 package main.util;
 
 @FunctionalInterface
-public interface SortAlgorithm {
-    void execute(Integer[] array, int size, Order order);
+public interface SortAlgorithm<T> {
+    void execute(Object[] array, int size, Order order);
 }
