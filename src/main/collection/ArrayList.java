@@ -2,7 +2,6 @@ package main.collection;
 
 import main.util.Order;
 import main.util.SortAlgorithm;
-import java.util.Arrays;
 
 
 public class ArrayList {
