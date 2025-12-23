@@ -4,6 +4,7 @@ import main.collection.ArrayList;
 import main.util.Order;
 import main.util.SortUtil;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -119,5 +120,9 @@ public class Main {
 
         stringList.sort(SortUtil::selectionSort, Order.DESC);
         System.out.println(stringList);
+
+        String[] xs = {"Gabriel", "Jose", "Bueno", "Otuska"};
+        SortUtil.selectionSort(xs, xs.length, Order.ASC);
+        System.out.println(Arrays.toString(xs));
     }
 }

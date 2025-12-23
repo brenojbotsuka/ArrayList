@@ -56,7 +56,7 @@ public class ArrayList<T> {
         size--;
     }
 
-    public void sort(SortAlgorithm<T> algorithm, Order order) {
+    public void sort(SortAlgorithm algorithm, Order order) {
         algorithm.execute(items, size, order);
     }
 
