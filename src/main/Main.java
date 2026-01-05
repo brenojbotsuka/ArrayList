@@ -1,6 +1,7 @@
 package main;
 
 import main.collection.ArrayList;
+import main.collection.MaxHeap;
 import main.util.Order;
 import main.util.SortUtil;
 
@@ -92,5 +93,21 @@ public class Main {
 
         integerList.sort(SortUtil::selectionSort, Order.DESC);
         System.out.println(integerList);
+
+        MaxHeap h = new MaxHeap(10);
+        for (int i = 0; i < 10; i++) {
+            h.push(random.nextInt(1, 100));
+        }
+
+        System.out.println("Maior elemento: " + h.peekMax());
+        System.out.println("Removido: " + h.popMax());
+        System.out.println("Novo Maior: " + h.peekMax());
+
+        Integer[] arr = new Integer[10];
+        for (int i = 0; i < 10; i++) {
+            arr[i] = random.nextInt(1, 100);
+        }
+        MaxHeap h2 = new MaxHeap(arr, 8);
+        System.out.println("Maior elemento em h2: " + h2.peekMax());
     }
 }
