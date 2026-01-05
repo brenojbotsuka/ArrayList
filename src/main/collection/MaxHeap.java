@@ -9,9 +9,9 @@ public class MaxHeap {
         this.heap = new Integer[capacity];
     }
 
-    public MaxHeap(Integer[] arr, int size) {
+    public MaxHeap(Integer[] array, int size) {
         this.size = size;
-        this.heap = arr;
+        this.heap = array;
         for (int i = size / 2 - 1; i >= 0; i--) {
             heapify(i);
         }
