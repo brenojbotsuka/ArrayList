@@ -24,7 +24,7 @@ public abstract class Heap {
         int current = size;
         size++;
 
-        while (heap[current] > heap[parent(current)]) {
+        while (compare(heap[current], heap[parent(current)])) {
             swap(current, parent(current));
             current = parent(current);
         }
