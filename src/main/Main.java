@@ -77,6 +77,8 @@ public class Main {
         }
         System.out.println(integerList);
         System.out.println("heapSort");
+        integerList.sort(SortUtil::heapSort, Order.DESC);
+        System.out.println(integerList);
         integerList.sort(SortUtil::heapSort, Order.ASC);
         System.out.println(integerList);
 
@@ -103,15 +105,15 @@ public class Main {
             h.push(random.nextInt(1, 100));
         }
 
-        System.out.println("Maior elemento: " + h.peekMax());
-        System.out.println("Removido: " + h.popMax());
-        System.out.println("Novo Maior: " + h.peekMax());
+        System.out.println("Maior elemento: " + h.peek());
+        System.out.println("Removido: " + h.pop());
+        System.out.println("Novo Maior: " + h.peek());
 
         Integer[] arr = new Integer[10];
         for (int i = 0; i < 10; i++) {
             arr[i] = random.nextInt(1, 100);
         }
         MaxHeap h2 = new MaxHeap(arr, 8);
-        System.out.println("Maior elemento em h2: " + h2.peekMax());
+        System.out.println("Maior elemento em h2: " + h2.peek());
     }
 }

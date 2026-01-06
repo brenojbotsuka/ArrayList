@@ -1,12 +1,14 @@
 package main.util;
 
+import main.collection.Heap;
 import main.collection.MaxHeap;
+import main.collection.MinHeap;
 
 public class SortUtil {
     public static void heapSort(Integer[] array, int size, Order order) {
-        MaxHeap heap = new MaxHeap(array, size);
+        Heap heap = order == Order.ASC ? new MaxHeap(array, size) : new MinHeap(array, size);
         for (int i = size -  1; i >= 0; i--) {
-            Integer biggest = heap.popMax();
+            Integer biggest = heap.pop();
             array[i] = biggest;
         }
     }
