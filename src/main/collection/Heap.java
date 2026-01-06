@@ -1,8 +1,8 @@
 package main.collection;
 
 public abstract class Heap {
-    protected final Integer[] heap;
-    protected int size;
+    private final Integer[] heap;
+    private int size;
 
     public Heap(int capacity) {
         this.size = 0;
@@ -43,15 +43,32 @@ public abstract class Heap {
         return heap[0];
     }
 
-    protected int parent(int pos) { return (pos - 1) / 2; }
-    protected int leftChild(int pos) { return (2 * pos) + 1; }
-    protected int rightChild(int pos) { return (2 * pos) + 2; }
+    private int parent(int pos) { return (pos - 1) / 2; }
+    private int leftChild(int pos) { return (2 * pos) + 1; }
+    private int rightChild(int pos) { return (2 * pos) + 2; }
 
-    protected void swap(int pos1, int pos2) {
+    private void swap(int pos1, int pos2) {
         Integer tmp = heap[pos1];
         heap[pos1] = heap[pos2];
         heap[pos2] = tmp;
     }
 
-    protected abstract void heapify(int pos);
+    private void heapify(int pos) {
+        int moreRelevant = pos;
+
+        int left = leftChild(pos);
+        if (left < size && compare(heap[left], heap[moreRelevant])) {
+            moreRelevant = left;
+        }
+        int right = rightChild(pos);
+        if (right < size && compare(heap[right], heap[moreRelevant])) {
+            moreRelevant = right;
+        }
+        if (moreRelevant != pos) {
+            swap(pos, moreRelevant);
+            heapify(moreRelevant);
+        }
+    }
+
+    protected abstract boolean compare(Integer x1, Integer x2);
 }

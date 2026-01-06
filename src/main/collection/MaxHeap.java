@@ -9,20 +9,8 @@ public class MaxHeap extends Heap {
         super(array, size);
     }
 
-    protected void heapify(int pos) {
-        int largest = pos;
-
-        int left = leftChild(pos);
-        if (left < size && heap[left] > heap[largest]) {
-            largest = left;
-        }
-        int right = rightChild(pos);
-        if (right < size && heap[right] > heap[largest]) {
-            largest = right;
-        }
-        if (largest != pos) {
-            swap(pos, largest);
-            heapify(largest);
-        }
+    @Override
+    protected boolean compare(Integer x1, Integer x2) {
+        return x1 > x2;
     }
 }

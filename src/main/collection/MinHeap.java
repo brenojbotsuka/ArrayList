@@ -10,21 +10,8 @@ public class MinHeap extends Heap {
     }
 
     @Override
-    protected void heapify(int pos) {
-        int smallest = pos;
-
-        int left = leftChild(pos);
-        if (left < size && heap[left] < heap[smallest]) {
-            smallest = left;
-        }
-        int right = rightChild(pos);
-        if (right < size && heap[right] < heap[smallest]) {
-            smallest = right;
-        }
-        if (smallest != pos) {
-            swap(pos, smallest);
-            heapify(smallest);
-        }
+    protected boolean compare(Integer x1, Integer x2) {
+        return x1 < x2;
     }
 }
 
