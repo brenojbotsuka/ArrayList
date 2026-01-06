@@ -8,8 +8,7 @@ public class SortUtil {
     public static void heapSort(Integer[] array, int size, Order order) {
         Heap heap = order == Order.ASC ? new MaxHeap(array, size) : new MinHeap(array, size);
         for (int i = size -  1; i >= 0; i--) {
-            Integer biggest = heap.pop();
-            array[i] = biggest;
+            array[i] = heap.pop();
         }
     }
 
