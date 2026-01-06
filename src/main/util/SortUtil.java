@@ -1,6 +1,16 @@
 package main.util;
 
+import main.collection.MaxHeap;
+
 public class SortUtil {
+    public static void heapSort(Integer[] array, int size, Order order) {
+        MaxHeap heap = new MaxHeap(array, size);
+        for (int i = size -  1; i >= 0; i--) {
+            Integer biggest = heap.popMax();
+            array[i] = biggest;
+        }
+    }
+
     public static void bubbleSort(Integer[] array, int size, Order order) {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++) {

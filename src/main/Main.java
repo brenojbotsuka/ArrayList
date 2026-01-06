@@ -76,22 +76,26 @@ public class Main {
             integerList.addItem(item);
         }
         System.out.println(integerList);
+        System.out.println("heapSort");
+        integerList.sort(SortUtil::heapSort, Order.ASC);
+        System.out.println(integerList);
+
+        System.out.println("bubbleSort");
+        integerList.sort(SortUtil::bubbleSort, Order.DESC);
+        System.out.println(integerList);
         integerList.sort(SortUtil::bubbleSort, Order.ASC);
         System.out.println(integerList);
 
+        System.out.println("insertionSort");
+        integerList.sort(SortUtil::insertionSort, Order.DESC);
+        System.out.println(integerList);
         integerList.sort(SortUtil::insertionSort, Order.ASC);
         System.out.println(integerList);
 
-        integerList.sort(SortUtil::selectionSort, Order.ASC);
-        System.out.println(integerList);
-
-        integerList.sort(SortUtil::bubbleSort, Order.DESC);
-        System.out.println(integerList);
-
-        integerList.sort(SortUtil::insertionSort, Order.DESC);
-        System.out.println(integerList);
-
+        System.out.println("selectionSort");
         integerList.sort(SortUtil::selectionSort, Order.DESC);
+        System.out.println(integerList);
+        integerList.sort(SortUtil::selectionSort, Order.ASC);
         System.out.println(integerList);
 
         MaxHeap h = new MaxHeap(10);
