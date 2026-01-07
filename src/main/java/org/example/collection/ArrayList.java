@@ -1,7 +1,7 @@
 package org.example.collection;
 
-import org.example.util.util.Order;
-import org.example.util.util.SortAlgorithm;
+import org.example.util.Order;
+import org.example.util.SortAlgorithm;
 
 
 public class ArrayList {

@@ -2,8 +2,8 @@ package org.example;
 
 import org.example.collection.ArrayList;
 import org.example.collection.MaxHeap;
-import org.example.util.util.Order;
-import org.example.util.util.SortUtil;
+import org.example.util.Order;
+import org.example.util.SortUtil;
 
 import java.util.Random;
 

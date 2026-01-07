@@ -1,4 +1,4 @@
-package org.example.util.util;
+package org.example.util;
 
 @FunctionalInterface
 public interface SortAlgorithm {

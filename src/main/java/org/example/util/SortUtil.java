@@ -1,4 +1,4 @@
-package org.example.util.util;
+package org.example.util;
 
 import org.example.collection.Heap;
 import org.example.collection.MaxHeap;
