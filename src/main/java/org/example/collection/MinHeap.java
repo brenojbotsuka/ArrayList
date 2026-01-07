@@ -1,4 +1,4 @@
-package main.collection;
+package org.example.collection;
 
 public class MinHeap extends Heap {
     public MinHeap(int capacity) {

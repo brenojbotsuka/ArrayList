@@ -1,8 +1,8 @@
-package main.util;
+package org.example.util.util;
 
-import main.collection.Heap;
-import main.collection.MaxHeap;
-import main.collection.MinHeap;
+import org.example.collection.Heap;
+import org.example.collection.MaxHeap;
+import org.example.collection.MinHeap;
 
 public class SortUtil {
     public static void heapSort(Integer[] array, int size, Order order) {

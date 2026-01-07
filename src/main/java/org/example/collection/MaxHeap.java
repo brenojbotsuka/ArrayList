@@ -1,4 +1,4 @@
-package main.collection;
+package org.example.collection;
 
 public class MaxHeap extends Heap {
     public MaxHeap(int capacity) {

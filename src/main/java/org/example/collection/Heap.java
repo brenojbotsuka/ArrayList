@@ -1,4 +1,4 @@
-package main.collection;
+package org.example.collection;
 
 public abstract class Heap {
     private final Integer[] heap;

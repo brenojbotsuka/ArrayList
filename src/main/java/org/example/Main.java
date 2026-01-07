@@ -1,9 +1,9 @@
-package main;
+package org.example;
 
-import main.collection.ArrayList;
-import main.collection.MaxHeap;
-import main.util.Order;
-import main.util.SortUtil;
+import org.example.collection.ArrayList;
+import org.example.collection.MaxHeap;
+import org.example.util.util.Order;
+import org.example.util.util.SortUtil;
 
 import java.util.Random;
 
