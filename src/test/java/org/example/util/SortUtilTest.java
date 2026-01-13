@@ -50,7 +50,7 @@ class SortUtilTest {
 
         algorithm.execute(array, 3, Order.ASC);
 
-        assertArrayEquals(expected, array);
+        assertArrayEquals(expected, array, name + " failed: The array should be partially sorted");
     }
 
     @ParameterizedTest(name = "{0}: Deve funcionar com array de um único elemento")
@@ -61,7 +61,7 @@ class SortUtilTest {
 
         algorithm.execute(array, 1, Order.ASC);
 
-        assertArrayEquals(expected, array);
+        assertArrayEquals(expected, array, name + " failed: The array should have length equals one");
     }
 
     @ParameterizedTest(name = "{0}: Deve funcionar com array vazio")
@@ -72,6 +72,6 @@ class SortUtilTest {
 
         algorithm.execute(array, 0, Order.ASC);
 
-        assertArrayEquals(expected, array);
+        assertArrayEquals(expected, array, name + " failed: The array should be empty");
     }
 }
