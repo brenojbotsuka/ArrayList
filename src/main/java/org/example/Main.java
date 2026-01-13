@@ -1,8 +1,9 @@
-package main;
+package org.example;
 
-import main.collection.ArrayList;
-import main.util.Order;
-import main.util.SortUtil;
+import org.example.collection.ArrayList;
+import org.example.collection.MaxHeap;
+import org.example.util.Order;
+import org.example.util.SortUtil;
 
 import java.util.Random;
 
@@ -75,22 +76,44 @@ public class Main {
             integerList.addItem(item);
         }
         System.out.println(integerList);
+        System.out.println("heapSort");
+        integerList.sort(SortUtil::heapSort, Order.DESC);
+        System.out.println(integerList);
+        integerList.sort(SortUtil::heapSort, Order.ASC);
+        System.out.println(integerList);
+
+        System.out.println("bubbleSort");
+        integerList.sort(SortUtil::bubbleSort, Order.DESC);
+        System.out.println(integerList);
         integerList.sort(SortUtil::bubbleSort, Order.ASC);
         System.out.println(integerList);
 
+        System.out.println("insertionSort");
+        integerList.sort(SortUtil::insertionSort, Order.DESC);
+        System.out.println(integerList);
         integerList.sort(SortUtil::insertionSort, Order.ASC);
         System.out.println(integerList);
 
+        System.out.println("selectionSort");
+        integerList.sort(SortUtil::selectionSort, Order.DESC);
+        System.out.println(integerList);
         integerList.sort(SortUtil::selectionSort, Order.ASC);
         System.out.println(integerList);
 
-        integerList.sort(SortUtil::bubbleSort, Order.DESC);
-        System.out.println(integerList);
+        MaxHeap h = new MaxHeap(10);
+        for (int i = 0; i < 10; i++) {
+            h.push(random.nextInt(1, 100));
+        }
 
-        integerList.sort(SortUtil::insertionSort, Order.DESC);
-        System.out.println(integerList);
+        System.out.println("Maior elemento: " + h.peek());
+        System.out.println("Removido: " + h.pop());
+        System.out.println("Novo Maior: " + h.peek());
 
-        integerList.sort(SortUtil::selectionSort, Order.DESC);
-        System.out.println(integerList);
+        Integer[] arr = new Integer[10];
+        for (int i = 0; i < 10; i++) {
+            arr[i] = random.nextInt(1, 100);
+        }
+        MaxHeap h2 = new MaxHeap(arr, 8);
+        System.out.println("Maior elemento em h2: " + h2.peek());
     }
 }
