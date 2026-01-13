@@ -4,7 +4,19 @@ import org.example.collection.Heap;
 import org.example.collection.MaxHeap;
 import org.example.collection.MinHeap;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class SortUtil {
+    public static void treeMapSort(Integer[] array, int size, Order order) {
+        TreeMap<Integer, Boolean> map = new TreeMap<>();
+        for (int i = 0; i < size; i++) { map.put(array[i], true); }
+        int i = 0;
+        for (Map.Entry<Integer, Boolean> entry : map.entrySet()) {
+            array[i++] = entry.getKey();
+        }
+    }
+
     public static void heapSort(Integer[] array, int size, Order order) {
         Heap heap = order == Order.ASC ? new MaxHeap(array, size) : new MinHeap(array, size);
         for (int i = size -  1; i >= 0; i--) {

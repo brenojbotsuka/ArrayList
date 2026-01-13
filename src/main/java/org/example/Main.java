@@ -115,5 +115,14 @@ public class Main {
         }
         MaxHeap h2 = new MaxHeap(arr, 8);
         System.out.println("Maior elemento em h2: " + h2.peek());
+
+        ArrayList list3 = new ArrayList(10);
+        for (int i = 0; i < 8; i++) {
+            int item = random.nextInt(-100, 100);
+            list3.addItem(item);
+        }
+        System.out.println(list3);
+        list3.sort(SortUtil::treeMapSort, Order.ASC);
+        System.out.println(list3);
     }
 }
