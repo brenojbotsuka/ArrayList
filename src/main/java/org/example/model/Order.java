@@ -1,4 +1,4 @@
-package org.example.util;
+package org.example.model;
 
 public enum Order {
     ASC,

@@ -1,6 +1,6 @@
 package org.example.collection;
 
-import org.example.util.Order;
+import org.example.model.Order;
 import org.example.util.SortAlgorithm;
 
 

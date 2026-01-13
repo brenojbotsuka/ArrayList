@@ -3,6 +3,7 @@ package org.example.util;
 import org.example.collection.Heap;
 import org.example.collection.MaxHeap;
 import org.example.collection.MinHeap;
+import org.example.model.Order;
 
 public class SortUtil {
     public static void heapSort(Integer[] array, int size, Order order) {
