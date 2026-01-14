@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.collection.ArrayList;
 import org.example.collection.MaxHeap;
+import org.example.collection.SortedArrayList;
 import org.example.model.Order;
 import org.example.util.SortUtil;
 
@@ -115,5 +116,15 @@ public class Main {
         }
         MaxHeap h2 = new MaxHeap(arr, 8);
         System.out.println("Maior elemento em h2: " + h2.peek());
+
+        int size = 100000;
+        SortedArrayList sortedList = new SortedArrayList(size);
+        for (int i = 0; i < size; i++) {
+            int item = random.nextInt(1, size*5);
+            sortedList.addItem(item);
+        }
+        System.out.println(sortedList);
+        sortedList.removeItem(400);
+        System.out.println(sortedList.indexOf(-1));
     }
 }
