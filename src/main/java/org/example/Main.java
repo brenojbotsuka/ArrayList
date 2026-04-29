@@ -1,8 +1,6 @@
 package org.example;
 
-import org.example.collection.ArrayList;
-import org.example.collection.MaxHeap;
-import org.example.collection.SortedArrayList;
+import org.example.collection.*;
 import org.example.model.Order;
 import org.example.util.SortUtil;
 
@@ -126,5 +124,15 @@ public class Main {
         System.out.println(sortedList);
         sortedList.removeItem(400);
         System.out.println(sortedList.indexOf(-1));
+
+        Heap h3 = new MinHeap(10);
+        for (int i = 0; i < 10; i++) {
+            int x = random.nextInt(1, 100);
+            System.out.println(x);
+            h3.push(x);
+        }
+        System.out.println("Menor elemento: " + h3.peek());
+        System.out.println("Removido: " + h3.pop());
+        System.out.println("Novo Menor: " + h3.peek());
     }
 }
