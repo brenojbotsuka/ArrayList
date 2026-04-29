@@ -1,6 +1,11 @@
 package org.example;
 
-import org.example.collection.*;
+import org.example.collection.ArrayList;
+import org.example.collection.Heap;
+import org.example.collection.MinHeap;
+import org.example.collection.MaxHeap;
+import org.example.collection.SortedArrayList;
+
 import org.example.model.Order;
 import org.example.util.SortUtil;
 
